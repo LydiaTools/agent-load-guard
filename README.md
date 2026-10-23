@@ -20,6 +20,12 @@ python3 -m pip install .
 
 The GitHub Releases page also provides a wheel and its SHA-256 checksum.
 
+Install the current v0.1.0 wheel directly:
+
+```bash
+python3 -m pip install https://github.com/LydiaTools/agent-load-guard/releases/download/v0.1.0/agent_load_guard-0.1.0-py3-none-any.whl
+```
+
 ## Try it
 
 Check the current machine and whether a default job fits:

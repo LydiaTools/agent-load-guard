@@ -20,6 +20,12 @@ python3 -m pip install .
 
 GitHub Releases 页面也会提供 wheel 安装包及其 SHA-256 校验值。
 
+也可以直接安装 v0.1.0 wheel：
+
+```bash
+python3 -m pip install https://github.com/LydiaTools/agent-load-guard/releases/download/v0.1.0/agent_load_guard-0.1.0-py3-none-any.whl
+```
+
 ## 试一下
 
 查看当前资源和默认任务能否启动：
