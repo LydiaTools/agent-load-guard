@@ -53,6 +53,14 @@ python3 examples/concurrency_demo.py
 
 它会先启动一个短任务，再通过同一个隔离状态目录启动第二个任务。演示会核对第二个结果为 `busy`、退出码为 `75`，且被拦截的子进程没有运行。不需要启动 Agent 会话、API Key 或网络请求。
 
+实测输出：
+
+```text
+first: running owner=demo-active
+second: busy child_started=false exit=75
+verified: the blocked child's marker was not created
+```
+
 ## 支持任意命令
 
 资源闸门位于 Agent 运行环境之外，可包住 Codex CLI、Claude Code CLI、构建、测试或导出命令：

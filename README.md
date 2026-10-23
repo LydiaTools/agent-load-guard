@@ -53,6 +53,14 @@ python3 examples/concurrency_demo.py
 
 It starts one short-lived child, then tries to start another through the same isolated state directory. The demo verifies the second result is `busy`, exit code `75`, and that the blocked child did not run. No agent session, API key, or network request is involved.
 
+Verified output:
+
+```text
+first: running owner=demo-active
+second: busy child_started=false exit=75
+verified: the blocked child's marker was not created
+```
+
 ## Works with any command
 
 The guard is deliberately outside the agent runtime. Wrap a Codex CLI, Claude Code CLI, build, test, or export command that you start yourself:
