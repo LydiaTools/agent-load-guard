@@ -45,6 +45,14 @@ agent-load-guard run --owner codex-integration-tests \
 
 内存和磁盘用量由你估算。通过检查后，子命令运行期间会一直占用任务位。第二个受控命令会以退出码 `75` 返回，不会启动；资源不足时也一样。子命令自身的退出码会原样返回。
 
+安装并克隆本仓库后，运行真实的双进程演示：
+
+```bash
+python3 examples/concurrency_demo.py
+```
+
+它会先启动一个短任务，再通过同一个隔离状态目录启动第二个任务。演示会核对第二个结果为 `busy`、退出码为 `75`，且被拦截的子进程没有运行。不需要启动 Agent 会话、API Key 或网络请求。
+
 ## 支持任意命令
 
 资源闸门位于 Agent 运行环境之外，可包住 Codex CLI、Claude Code CLI、构建、测试或导出命令：

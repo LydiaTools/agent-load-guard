@@ -45,6 +45,14 @@ agent-load-guard run --owner codex-integration-tests \
 
 The estimates are supplied by you. On success, the child command runs and the slot stays occupied until it exits. A second guarded command exits with code `75` and does not start. A resource check failure also exits with code `75`; command errors keep their original exit code.
 
+After installing from this checkout, run the real two-process demo:
+
+```bash
+python3 examples/concurrency_demo.py
+```
+
+It starts one short-lived child, then tries to start another through the same isolated state directory. The demo verifies the second result is `busy`, exit code `75`, and that the blocked child did not run. No agent session, API key, or network request is involved.
+
 ## Works with any command
 
 The guard is deliberately outside the agent runtime. Wrap a Codex CLI, Claude Code CLI, build, test, or export command that you start yourself:
